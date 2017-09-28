@@ -2,7 +2,7 @@
 user authentication with node.js, express and mysql
 
 ## Getting Started
-create .env file
+create `.env` file
 ```
 PORT=80
 DB_HOST=10.0.0.100
