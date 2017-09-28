@@ -1,0 +1,67 @@
+<!-- views/index.ejs -->
+<!doctype html>
+<html>
+
+<head>
+    <title>Image+ Administration</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <!-- load bootstrap css -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="icon" href="/favicon.ico">
+    <!-- load fontawesome -->
+    <style>
+        body {
+            padding-top: 80px;
+        }
+        .mystyle {
+            background-color: #eee;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 63px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+            <div class="mystyle col-sm-6 col-sm-offset-3 text-center">
+            <h1>Login</h1>
+            <br>
+            <p>Please log in to continue:</p>
+            
+            <!-- <a href="/login" class="btn btn-default"><span class="fa fa-lock"></span> Local Login</a> -->
+            <!--<a href="/signup" class="btn btn-default"><span class="fa fa-user"></span> Local Signup</a>-->
+
+            <!-- show any messages that come back with authentication -->
+            <% if (message.length > 0) { %>
+                <div class="alert alert-danger">
+                    <%= message %>
+                </div>
+            <% } %>
+
+            <form action="/login" method="POST" class="form-horizontal">
+                <div class="form-group">
+                    <label for="username" class="control-label col-sm-2 col-sm-offset-2">Username</label>
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control" name="username">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="control-label col-sm-2 col-sm-offset-2">Password</label>
+                    <div class="col-sm-7">
+                        <input type="password" class="form-control" name="password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-lg">Login</button>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+</body>
+
+</html>
