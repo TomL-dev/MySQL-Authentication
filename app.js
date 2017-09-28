@@ -9,6 +9,7 @@ var functions = require('./functions/functions');
 
 var app = express();
 app.use(cookieParser());
+app.use(express.static('public'))
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
@@ -20,8 +21,9 @@ app.use(session({
 app.set('view engine', 'ejs'); // set up ejs for templating
 
 app.get('/', function(req, res){
-	var response = functions.CreateResponse("Welcome to base", "BASE");
-	res.status(200).send(response);
+	//var response = functions.CreateResponse("Welcome to base", "BASE");
+	//res.status(200).send(response);
+	res.render('index');
 });
 
 app.get('/login', function(req, res){
